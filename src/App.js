@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Counter from "./containers/Counter";
+
+import "./containers/css/bootstrap.min.css"
+import Layout from "./layout/Layout";
+import AxiosTut from "./containers/AxiosTut";
+import { Route, Routes } from "react-router";
+import InfiniteScroll from "./containers/InfiniteScroll";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+
+        <Routes>
+        <Route path="/" exact element={<Counter />} />
+        <Route path="/axios" element={<AxiosTut />} />
+        <Route path="/scroll" element={<InfiniteScroll />} />
+      </Routes>
+
+      </Layout>
+
   );
 }
 
